@@ -1,3 +1,12 @@
+<script setup>
+defineProps({
+  cantidad: {
+    type: Number,
+    required: true
+  }
+})
+</script>
+
 <template>
   <header class="app-header">
     <div class="app-header__content">
@@ -7,7 +16,7 @@
       </div>
 
       <div class="app-header__cart">
-        <span>Mi carrito 🛍️</span>
+        <span>Mi carrito 🛍️ ({{ cantidad }})</span>
       </div>
     </div>
   </header>

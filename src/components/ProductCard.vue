@@ -5,6 +5,9 @@ defineProps({
     required: true,
   },
 });
+
+const emit = defineEmits(['agregar'])
+
 </script>
 
 <template>
@@ -23,6 +26,11 @@ defineProps({
     <p>Stock disponible: {{ product.stock }}</p>
 
     <span v-if="product.stock === 0"> Agotado </span>
+<!-- $emit: envía un evento al componente padre. -->
+    <button :disabled="product.stock === 0" @click="emit('agregar', product)">
+      Agregar 🛒
+    </button>
+
   </article>
 </template>
 
@@ -68,7 +76,7 @@ defineProps({
 }
 
 .product-card--out-of-stock {
-  background-color: #ECEFEC;
+  background-color: #ecefec;
   opacity: 0.75;
 }
 
