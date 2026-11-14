@@ -23,3 +23,23 @@ const productos = ref(products)
     <ShoppingCart />
   </main>
 </template>
+
+<style lang="scss" scoped>
+
+.products {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
